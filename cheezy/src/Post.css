@@ -37,6 +37,7 @@
 .picture-image {
      width: inherit;
      height: inherit;
+     object-fit: cover;
 }
 
 .captions-actions-container {
@@ -55,10 +56,26 @@
 
 .actions-container {
      width: 100px;
+     margin-left: 10px;
+     margin-right: 10px;
      height: inherit;
      display: flex;
      flex-direction: row;
      justify-content: center;
+     align-items: center;
+}
+
+.like-button {
+     height: 30px;
+     width: 30px;
+     margin: 10px;
+}
+
+
+.cheese-button {
+     height: 30px;
+     width: 30px;
+     margin: 10px;
 }
 
 p {

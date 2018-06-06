@@ -10,8 +10,8 @@ class Post extends Component {
                caption: "I went to the beach",
                imageUrl: "elmobeach.png",
                profileUrl: "elmo.jpg",
-               likes: 0,
-               cheese: 0,
+               likes: 8,
+               cheese: 11,
                date: "",
                comments: []
           }
@@ -36,10 +36,14 @@ class Post extends Component {
                          </div>
                          <div className="actions-container">
                               <button className="like-button"></button>
+                              <p className="likes-label"> {this.state.likes} </p>
                               <button className="cheese-button"></button>
+                              <p className="cheese-label"> {this.state.cheese} </p>
                          </div>
                     </div>
-
+                    <div className="comments-container">
+                         <h1> COMMENTS </h1>
+                    </div>
                </div>
           );
      }
