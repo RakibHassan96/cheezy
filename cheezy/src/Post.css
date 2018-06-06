@@ -1,5 +1,83 @@
 .Post {
-     width: 300px;
-     height: 500px;
+     width: 500px;
+     height: 700px;
      background-color: red;
+     text-align: center;
+}
+
+.Post-header {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: inherit;
+     height: 75px;
+     background-color: purple;
+}
+
+.author-name {
+     font-size: 1em;
+     font-weight: bold;
+}
+
+.profile-picture {
+     width: 50px;
+     height: 50px;
+     border: 2px solid black;
+     border-radius: 50%;
+     margin: 10px;
+}
+
+.picture-container {
+     width: inherit;
+     height: 500px;
+     background-color: green;
+}
+
+.picture-image {
+     width: inherit;
+     height: inherit;
+     object-fit: cover;
+}
+
+.captions-actions-container {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     width: inherit;
+     height: 50px;
+     background-color: orange;
+}
+
+.caption-container {
+     padding: 10px;
+}
+
+.actions-container {
+     width: 100px;
+     margin-left: 10px;
+     margin-right: 10px;
+     height: inherit;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+}
+
+.like-button {
+     height: 30px;
+     width: 30px;
+     margin: 10px;
+}
+
+
+.cheese-button {
+     height: 30px;
+     width: 30px;
+     margin: 10px;
+}
+
+p {
+     margin: 0;
 }
