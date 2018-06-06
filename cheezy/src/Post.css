@@ -1,5 +1,45 @@
 .Post {
-     width: 300px;
-     height: 500px;
+     width: 500px;
+     height: 700px;
      background-color: red;
+     text-align: center;
+}
+
+.Post-header {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     width: inherit;
+     height: 75px;
+     background-color: purple;
+}
+
+.author-name {
+     font-size: 1em;
+     font-weight: bold;
+}
+
+.picture-container {
+     width: inherit;
+     height: 500px;
+     background-color: green;
+}
+
+.captions-actions-container {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     width: inherit;
+     height: 50px;
+     background-color: orange;
+}
+
+.caption-container {
+     padding: 10px;
+}
+
+p {
+     margin: 0;
 }
