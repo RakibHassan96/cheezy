@@ -6,10 +6,10 @@ class Post extends Component {
      constructor(){
           super();
           this.state = {
-               author: "author",
+               author: "elmo",
                caption: "I went to the beach",
-               imageUrl: "",
-               profileUrl: "",
+               imageUrl: "elmobeach.png",
+               profileUrl: "elmo.jpg",
                likes: 0,
                cheese: 0,
                date: "",
@@ -28,7 +28,7 @@ class Post extends Component {
                          <img className="profile-picture" src={this.state.profileUrl} />
                     </div>
                     <div className="picture-container">
-                         <img src={this.state.imageUrl} />
+                         <img className="picture-image" src={this.state.imageUrl} />
                     </div>
                     <div className="captions-actions-container">
                          <div className="caption-container">

@@ -20,10 +20,23 @@
      font-weight: bold;
 }
 
+.profile-picture {
+     width: 50px;
+     height: 50px;
+     border: 2px solid black;
+     border-radius: 50%;
+     margin: 10px;
+}
+
 .picture-container {
      width: inherit;
      height: 500px;
      background-color: green;
+}
+
+.picture-image {
+     width: inherit;
+     height: inherit;
 }
 
 .captions-actions-container {
@@ -38,6 +51,14 @@
 
 .caption-container {
      padding: 10px;
+}
+
+.actions-container {
+     width: 100px;
+     height: inherit;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
 }
 
 p {
