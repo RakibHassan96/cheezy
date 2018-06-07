@@ -34,7 +34,14 @@ class App extends Component {
     </div>));*/}
     return (
       <div className="App">
-      <AddPost  appCallback={this.getAddedPost}/>
+      <div className="App-header">
+           <div className="app-name-logo-container">
+               <p className="App-name"> Cheezy </p>
+               <img id="cheezy-logo" src="cheese-icon.png"/>
+          </div>
+           <AddPost  appCallback={this.getAddedPost}/>
+           <p className="App-credits"> a React social network </p>
+      </div>
       {posts}
       {/*
         <header className="App-header">

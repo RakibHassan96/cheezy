@@ -1,7 +1,7 @@
 #formButton{
   padding-top: 1%;
-  backgroundColor:rgba(0,0,0,0);
-  border-width:0px;
+  background-color: rgb(35,178,153,1);
+  border: 0px;
 }
 #addIcon{
   height:50px;
