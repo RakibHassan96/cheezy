@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Comments from './comments';
 import AddPost from './AddPost';
 import Post from './Post';
 
@@ -33,6 +34,7 @@ class App extends Component {
     </div>));*/}
     return (
       <div className="App">
+        <Comments />
       <AddPost  appCallback={this.getAddedPost}/>
       {posts}
       {/*
