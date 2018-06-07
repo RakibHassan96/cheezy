@@ -49,6 +49,7 @@ class AddPost extends Component {
       image_url: this.state.image_url,
       profile_image_url: this.state.profile_image_url,
       date : this.state.date,
+      postId: -1
     };
     this.props.appCallback(obj);
     /*

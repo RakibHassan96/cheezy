@@ -14,17 +14,8 @@ class Post extends Component {
       cheese: 11,
       date: this.props.postInfoFromApp.date,
       comments: [],
+      postId: this.props.postInfoFromApp.postId
     }
-  }
-
-  getAddedComment = (addedComment) => {
-    let updated_comments = this.state.comments;
-    updated_comments.push(addedComment);
-    this.setState(
-      {comments:updated_comments}
-    );
-    console.log(this.state.comments[0].author);
-    console.log(this.state.comments[0].comment);
   }
 
   toggleLike(event) {
@@ -51,11 +42,11 @@ class Post extends Component {
      }
 
   render() {
-          const comments = this.state.comments.map((comment,i) => {
+          /*const comments = this.state.comments.map((comment,i) => {
                // console.log(comment);
                if(comment !== undefined)
                return <Comments key={i} postInfoFromApp={comment} />
-          });
+          });*/
 
           return (
                <div className="Post">
@@ -83,7 +74,7 @@ class Post extends Component {
                          </div>
                     </div>
                     <div className="comments-container">
-                         <Comments  appCallback={this.getAddedComment}/>
+                         <Comments commentsInfoFromPost={this.state.postId}/>
                     </div>
                </div>
           );

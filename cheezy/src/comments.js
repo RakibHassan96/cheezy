@@ -3,9 +3,10 @@ import logo from './logo.svg';
 import './comments.css'
 
 class Comments extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
+      id: this.props.commentsInfoFromPost,
       comments: [
         {
           author: "King Kendrick",
@@ -35,12 +36,19 @@ class Comments extends Component {
 
   handleSubmit(event){
     event.preventDefault();
+
     var obj = {
       author: this.state.author,
       comment: this.state.comment
     };
 
-    this.props.appCallback(obj);
+    let updatedComments = this.state.comments;
+
+    updatedComments.push(obj);
+
+    this.setState({
+      comments: updatedComments
+    })
 
     // console.log(obj.author);
     // console.log(obj.comment)
@@ -62,12 +70,14 @@ class Comments extends Component {
   render() {
     return (
       <div className="AddComment">
+
         <div>
-          <p> <strong>{this.state.comments[this.state.comments.length-1].author}</strong> {this.state.comments[this.state.comments.length-1].comment} </p>
           <p> <strong>{this.state.comments[this.state.comments.length-2].author}</strong> {this.state.comments[this.state.comments.length-2].comment} </p>
+          <p> <strong>{this.state.comments[this.state.comments.length-1].author}</strong> {this.state.comments[this.state.comments.length-1].comment} </p>
         </div>
-        <i class="far fa-comment" data-toggle="modal" data-target="#myModal2" id="commentIcon"></i>
-        <div id="myModal2" className="modal fade" role="dialog">
+
+        <i class="fas fa-comment fa-2x" data-toggle="modal" data-target={"#" + this.state.id +"myModal2"} id="commentIcon"></i>
+        <div id={this.state.id+"myModal2"} className="modal fade" role="dialog">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-body">
@@ -86,6 +96,7 @@ class Comments extends Component {
       </div>
     );
   }
+
 }
 
 export default Comments;
