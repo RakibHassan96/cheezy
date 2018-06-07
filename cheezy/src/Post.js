@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Post.css';
+import Comments from "./comments.js"
 
 class Post extends Component {
   constructor(props){
@@ -14,6 +15,16 @@ class Post extends Component {
       date: this.props.postInfoFromApp.date,
       comments: [],
     }
+  }
+
+  getAddedComment = (addedComment) => {
+    let updated_comments = this.state.comments;
+    updated_comments.push(addedComment);
+    this.setState(
+      {comments:updated_comments}
+    );
+    console.log(this.state.comments[0].author);
+    console.log(this.state.comments[0].comment);
   }
 
   toggleLike(event) {
@@ -31,7 +42,7 @@ class Post extends Component {
           })
         }
 
-        addCheese(event) {
+  addCheese(event) {
           let numCheese = this.state.cheese;
           numCheese++;
           this.setState({
@@ -39,7 +50,13 @@ class Post extends Component {
           })
      }
 
-     render() {
+  render() {
+          const comments = this.state.comments.map((comment,i) => {
+               // console.log(comment);
+               if(comment !== undefined)
+               return <Comments key={i} postInfoFromApp={comment} />
+          });
+
           return (
                <div className="Post">
                     <div className="Post-header">
@@ -66,8 +83,7 @@ class Post extends Component {
                          </div>
                     </div>
                     <div className="comments-container">
-                         <Comments />
-                         <h1> COMMENTS </h1>
+                         <Comments  appCallback={this.getAddedComment}/>
                     </div>
                </div>
           );
