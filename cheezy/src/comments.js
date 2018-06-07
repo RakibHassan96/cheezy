@@ -6,12 +6,19 @@ class Comments extends Component {
   constructor(){
     super();
     this.state = {
-      comment: "",
-      comments: []
+      author: "King Kendrick",
+      comment: "This definitely doesn't kill my vibe!"
     }
   }
 
-  handleChange(event){
+  handleAuthor(event){
+    const author = event.target.value;
+    this.setState({
+      author
+    })
+  }
+
+  handleComment(event){
     const comment = event.target.value;
     this.setState({
       comment
@@ -20,37 +27,48 @@ class Comments extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    const comment = this.state.comment;
-    let updatedComments = this.state.comments;
-    updatedComments.push({comment});
+    var obj = {
+      author: this.state.author,
+      comment: this.state.comment
+    };
 
-    this.setState({
-      comments: updatedComments
-    })
+    console.log(obj.author);
+    console.log(obj.comment)
 
-    let text = this.refs.text;
-    text.value = "";
-    console.log("This new list of comments: ", this.state.comments);
+    // event.preventDefault();
+    // const comment = this.state.comment;
+    // let updatedComments = this.state.comments;
+    // updatedComments.push({comment});
+
+    // this.setState({
+    //   comments: updatedComments
+    // })
+
+    // let text = this.refs.text;
+    // text.value = "";
+    // console.log("This new list of comments: ", this.state.comments);
   }
 
   render() {
-    const comments = this.state.comments;
-    const comment = comments.map((list, i) => (<li key={i}>      {list.comment}       </li>));
-
     return (
-      <div className="App">
-        <br />
-        <form>
-          <label>
-            Comment: <br /> <br />
-            <input onChange={this.handleChange.bind(this)} type="text" name="comment" ref="text" />
-          </label>
-            <br/><br/>
-            <input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
-        </form>
-        <ul>
-          { (comment) ? comment : null }
-        </ul>
+      <div className="AddComment">
+      <i class="far fa-comment" data-toggle="modal" data-target="#myModal"></i>
+        <div id="myModal" className="modal fade" role="dialog">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-body">
+                <form>
+                  <label>
+                    Author: <input onChange={this.handleAuthor.bind(this)} type="text" /> <br />
+                    Comment: <input onChange={this.handleComment.bind(this)} type="text" />
+                  </label>
+                    <br/>
+                    <input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)} data-dismiss="modal"/>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
