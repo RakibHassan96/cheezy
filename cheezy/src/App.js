@@ -34,7 +34,6 @@ class App extends Component {
     </div>));*/}
     return (
       <div className="App">
-        <Comments />
       <AddPost  appCallback={this.getAddedPost}/>
       {posts}
       {/*
