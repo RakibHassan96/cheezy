@@ -1,9 +1,10 @@
 .Post {
      width: 500px;
-     height: 700px;
+     height: 800px;
      background-color: rgb(255,209,50);
      text-align: center;
      border: 3px solid #4BFFDF;
+     margin: 15px;
 }
 
 .Post-header {
