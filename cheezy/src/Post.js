@@ -10,12 +10,38 @@ class Post extends Component {
                caption: "I went to the beach",
                imageUrl: "elmobeach.png",
                profileUrl: "elmo.jpg",
+               isLiked: false,
                likes: 8,
                cheese: 11,
                date: "",
                comments: []
           }
      }
+
+     toggleLike(event) {
+          let liked = this.state.isLiked;
+          liked = !liked;
+          let numLikes = this.state.likes;
+          if (liked){
+               numLikes++;
+          } else {
+               numLikes--;
+          }
+          this.setState({
+               isLiked: liked,
+               likes: numLikes
+          })
+     }
+
+     addCheese(event) {
+          let numCheese = this.state.cheese;
+          numCheese++;
+          this.setState({
+               cheese: numCheese
+          })
+     }
+
+
 
      render() {
 
@@ -35,10 +61,15 @@ class Post extends Component {
                               <p className="caption-label"> {this.state.caption} </p>
                          </div>
                          <div className="actions-container">
-                              <button className="like-button"></button>
-                              <p className="likes-label"> {this.state.likes} </p>
-                              <button className="cheese-button"></button>
-                              <p className="cheese-label"> {this.state.cheese} </p>
+                              <div className="button-data-container" id="likes">
+                                   <img id={this.state.isLiked ? "liked-button" : "like-button"}
+                                        src="like-icon.png" onClick={this.toggleLike.bind(this)}/>
+                                   <p className="label"> {this.state.likes} </p>
+                              </div>
+                              <div className="button-data-container" id="cheese">
+                                   <img id="cheese-button" src="cheese-icon.png" onClick={this.addCheese.bind(this)}/>
+                                   <p className="label"> {this.state.cheese} </p>
+                              </div>
                          </div>
                     </div>
                     <div className="comments-container">
