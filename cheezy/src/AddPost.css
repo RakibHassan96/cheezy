@@ -6,3 +6,33 @@
 #addIcon{
   height:50px;
 }
+
+#postFormBody{
+  padding: 0px;
+  background-color: rgba(255,209,50,0.3);
+}
+
+#addPostForm{
+  padding: 10px;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  /*justify-content: center;*/
+}
+
+.form-row{
+  justify-content: flex-end;
+  width:100%;
+  margin-bottom: 1%;
+}
+
+.text-input{
+  margin-left: 1%;
+  width:60%;
+}
+
+.submit-row{
+  justify-content: center;
+  width:100%;
+}

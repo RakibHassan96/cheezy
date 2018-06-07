@@ -70,18 +70,18 @@ class AddPost extends Component {
     console.log(posts);*/
     return(
       <div className="AddPost">
-      <button id="formButton" data-toggle="modal" data-target="#myModal">
+      <button id="formButton" data-toggle="modal" data-target="#postForm">
       <img id="addIcon" src="https://www.shareicon.net/data/512x512/2016/08/18/809318_add_512x512.png"/></button>
-      <div id="myModal" className="modal fade" role="dialog">
+      <div id="postForm" className="modal fade" role="dialog">
       <div className="modal-dialog">
       <div className="modal-content">
-      <div className="modal-body">
-      <form>
-      Author: <input type="text" onChange={this.handleAuthor.bind(this)}></input> <br/>
-      Caption: <input type="text" onChange={this.handleCaption.bind(this)}></input> <br/>
-      Image URL: <input type="text" onChange={this.handleImage.bind(this)}></input> <br/>
-      Profile Image URL: <input type="text" onChange={this.handleProfile.bind(this)}></input>
-      <input type="submit" onClick={this.handleSubmit.bind(this)} data-dismiss="modal"></input>
+      <div id="postFormBody" className="modal-body">
+      <form id="addPostForm">
+      <div className="form-row"> Author: <input className="text-input" type="text" onChange={this.handleAuthor.bind(this)}></input> </div>
+      <div className="form-row"> Caption: <input className="text-input" type="text" onChange={this.handleCaption.bind(this)}></input> </div>
+      <div className="form-row"> Image URL:   <input className="text-input" type="text" onChange={this.handleImage.bind(this)}></input> </div>
+      <div className="form-row"> Profile Image URL:   <input className="text-input" type="text" onChange={this.handleProfile.bind(this)}></input> </div>
+      <div className="submit-row"> <input type="submit" className="btn btn-warning" onClick={this.handleSubmit.bind(this)} data-dismiss="modal"></input> </div>
       </form>
       </div>
       </div>
