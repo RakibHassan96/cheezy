@@ -24,8 +24,11 @@ class App extends Component {
   render() {
     const posts = this.state.list_of_posts.map((post,i) =>
     { console.log(post);
-      if(post !== undefined)
-      return <Post key={i} postInfoFromApp={post} />});
+    	post.postId = i;
+      	if(post !== undefined)
+      		return <Post key={i} postInfoFromApp={post} />
+      }
+    );
     {/*(<div key={i}>
       {post.author} -
       {post.caption}<br/>
