@@ -2,38 +2,36 @@ import React, { Component } from 'react';
 import './Post.css';
 
 class Post extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      author: this.props.postInfoFromApp.author,
+      caption: this.props.postInfoFromApp.caption,
+      imageUrl: this.props.postInfoFromApp.image_url,
+      profileUrl: this.props.postInfoFromApp.profile_image_url,
+      likes: 8,
+      cheese: 11,
+      date: this.props.postInfoFromApp.date,
+      comments: [],
+    }
+  }
 
-     constructor(){
-          super();
-          this.state = {
-               author: "elmo",
-               caption: "I went to the beach",
-               imageUrl: "elmobeach.png",
-               profileUrl: "elmo.jpg",
-               isLiked: false,
-               likes: 8,
-               cheese: 11,
-               date: "",
-               comments: []
-          }
-     }
-
-     toggleLike(event) {
-          let liked = this.state.isLiked;
-          liked = !liked;
-          let numLikes = this.state.likes;
-          if (liked){
-               numLikes++;
+  toggleLike(event) {
+    let liked = this.state.isLiked;
+    liked = !liked;
+    let numLikes = this.state.likes;
+    if (liked){
+      numLikes++;
           } else {
-               numLikes--;
+            numLikes--;
           }
           this.setState({
-               isLiked: liked,
-               likes: numLikes
+            isLiked: liked,
+            likes: numLikes
           })
-     }
+        }
 
-     addCheese(event) {
+        addCheese(event) {
           let numCheese = this.state.cheese;
           numCheese++;
           this.setState({
@@ -41,12 +39,7 @@ class Post extends Component {
           })
      }
 
-
-
      render() {
-
-
-
           return (
                <div className="Post">
                     <div className="Post-header">

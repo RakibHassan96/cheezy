@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Comments from './comments';
 import AddPost from './AddPost';
+import Post from './Post';
 
 class App extends Component {
   constructor(){
@@ -21,12 +22,15 @@ class App extends Component {
   }
   render() {
     const posts = this.state.list_of_posts.map((post,i) =>
-    (<div key={i}>
+    { console.log(post);
+      if(post !== undefined)
+      return <Post key={i} postInfoFromApp={post} />});
+    {/*(<div key={i}>
       {post.author} -
       {post.caption}<br/>
       <img src={post.image_url}/><br/>
       <img src={post.profile_image_url}/><br/>
-    </div>));
+    </div>));*/}
     return (
       <div className="App">
         <Comments />
