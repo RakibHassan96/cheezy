@@ -1,8 +1,9 @@
 .Post {
      width: 500px;
      height: 700px;
-     background-color: red;
+     background-color: rgb(255,209,50);
      text-align: center;
+     border: 3px solid #4BFFDF;
 }
 
 .Post-header {
@@ -12,7 +13,7 @@
      align-items: center;
      width: inherit;
      height: 75px;
-     background-color: purple;
+     background-color: rgb(75, 255, 223);
 }
 
 .author-name {
@@ -47,7 +48,7 @@
      align-items: center;
      width: inherit;
      height: 50px;
-     background-color: orange;
+     background-color: inherit;
 }
 
 .caption-container {
