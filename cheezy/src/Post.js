@@ -73,6 +73,7 @@ class Post extends Component {
                          </div>
                     </div>
                     <div className="comments-container">
+                         <Comments />
                          <h1> COMMENTS </h1>
                     </div>
                </div>
