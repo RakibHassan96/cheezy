@@ -2,25 +2,20 @@ import React, { Component } from 'react';
 import './Post.css';
 
 class Post extends Component {
-
-     constructor(){
-          super();
+     constructor(props){
+          super(props);
           this.state = {
-               author: "elmo",
-               caption: "I went to the beach",
-               imageUrl: "elmobeach.png",
-               profileUrl: "elmo.jpg",
-               likes: 8,
-               cheese: 11,
-               date: "",
-               comments: []
+            author: this.props.postInfoFromApp.author,
+            caption: this.props.postInfoFromApp.caption,
+            imageUrl: this.props.postInfoFromApp.image_url,
+            profileUrl: this.props.postInfoFromApp.profile_image_url,
+            likes: 8,
+            cheese: 11,
+            date: this.props.postInfoFromApp.date,
+            comments: [],
           }
      }
-
      render() {
-
-
-
           return (
                <div className="Post">
                     <div className="Post-header">

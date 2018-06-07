@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './AddPost.css';
 
 class AddPost extends Component {
   constructor(){
@@ -49,7 +49,6 @@ class AddPost extends Component {
       image_url: this.state.image_url,
       profile_image_url: this.state.profile_image_url,
       date : this.state.date,
-      comments: [],
     };
     this.props.appCallback(obj);
     /*
@@ -71,8 +70,8 @@ class AddPost extends Component {
     console.log(posts);*/
     return(
       <div className="AddPost">
-      <button style={{backgroundColor:"rgba(0,0,0,0)"}}data-toggle="modal" data-target="#myModal">
-      <img src="https://www.shareicon.net/data/512x512/2016/08/18/809318_add_512x512.png"/></button>
+      <button id="formButton" data-toggle="modal" data-target="#myModal">
+      <img id="addIcon" src="https://www.shareicon.net/data/512x512/2016/08/18/809318_add_512x512.png"/></button>
       <div id="myModal" className="modal fade" role="dialog">
       <div className="modal-dialog">
       <div className="modal-content">
