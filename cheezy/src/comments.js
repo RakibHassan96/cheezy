@@ -6,8 +6,16 @@ class Comments extends Component {
   constructor(){
     super();
     this.state = {
-      author: "King Kendrick",
-      comment: "This definitely doesn't kill my vibe!"
+      comments: [
+        {
+          author: "King Kendrick",
+          comment: "This definitely doesn't kill my vibe!"
+        },
+        {
+          author: "J Cole",
+          comment: "Bro, you're so much better than me!"
+        },
+      ]
     }
   }
 
@@ -32,8 +40,10 @@ class Comments extends Component {
       comment: this.state.comment
     };
 
-    console.log(obj.author);
-    console.log(obj.comment)
+    this.props.appCallback(obj);
+
+    // console.log(obj.author);
+    // console.log(obj.comment)
 
     // event.preventDefault();
     // const comment = this.state.comment;
@@ -52,8 +62,12 @@ class Comments extends Component {
   render() {
     return (
       <div className="AddComment">
-      <i class="far fa-comment" data-toggle="modal" data-target="#myModal"></i>
-        <div id="myModal" className="modal fade" role="dialog">
+        <div>
+          <p> <strong>{this.state.comments[this.state.comments.length-1].author}</strong> {this.state.comments[this.state.comments.length-1].comment} </p>
+          <p> <strong>{this.state.comments[this.state.comments.length-2].author}</strong> {this.state.comments[this.state.comments.length-2].comment} </p>
+        </div>
+        <i class="far fa-comment" data-toggle="modal" data-target="#myModal2" id="commentIcon"></i>
+        <div id="myModal2" className="modal fade" role="dialog">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-body">
