@@ -6,14 +6,15 @@ class AddPost extends Component {
   constructor(){
     super();
     this.state = {
+      //Default Values
       author:"Kanye West",
       caption:"Cheezy Season Approaching",
       image_url:"https://i.pinimg.com/originals/a7/54/0d/a7540dfb718ccc0ae2ad8c4f8addbe73.jpg",
       profile_image_url:"https://i.imgflip.com/p0ydm.jpg",
       date: "4-20-1969",
-      //stored_posts: []
     }
   }
+  //Change state.author as its being typed in the input
   handleAuthor(event){
     const author = event.target.value;
     this.setState({
@@ -21,36 +22,39 @@ class AddPost extends Component {
     })
     console.log(author);
   }
+  //Change state.caption as its being typed in the input
   handleCaption(event){
     const caption = event.target.value;
     this.setState({
       caption: caption
     })
   }
+  //Change state.image_url as its being typed in the input
   handleImage(event){
     const image = event.target.value;
     this.setState({
       image_url: image
     })
   }
+  //Change state.profile_image_url as its being typed in the input
   handleProfile(event){
     const profile = event.target.value;
     this.setState({
       profile_image_url: profile
     })
   }
-  //Assume CallBack appCallback from App
+  //On submit of form, sends Post Object filled by state elements to App Component
   handleSubmit(event){
     event.preventDefault();
     var obj = {
       author: this.state.author,
-      //80 character limit
       caption: this.state.caption,
       image_url: this.state.image_url,
       profile_image_url: this.state.profile_image_url,
       date : this.state.date,
       postId: -1
     };
+    //Callback from App is passed through props, allows App to acces Post Object
     this.props.appCallback(obj);
     /*
     let updated_stored_posts = this.state.stored_posts;
@@ -61,14 +65,6 @@ class AddPost extends Component {
     console.log(this.state.stored_posts);*/
   }
   render() {
-    /*const posts = this.state.stored_posts.map((post,i) =>
-    (<div key={i}>
-      {post.author} -
-      {post.caption}<br/>
-      <img src={post.image_url}/><br/>
-      <img src={post.profile_image_url}/><br/>
-    </div>));
-    console.log(posts);*/
     return(
       <div className="AddPost">
       <button id="formButton" data-toggle="modal" data-target="#postForm">

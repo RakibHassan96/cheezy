@@ -13,8 +13,22 @@ class App extends Component {
       list_of_posts:[],
     }
   }
+  //Callback that is passed to AddPost component using props
+  //Allows access to Post Object created by AddPost
+  /*
+  The Post Object =
+  {
+    author: this.state.author, //state is of the AddPost Component
+    caption: this.state.caption,
+    image_url: this.state.image_url,
+    profile_image_url: this.state.profile_image_url,
+    date : this.state.date,
+    postId: -1
+  };
+  */
   getAddedPost = (addedPost) => {
     let updated_list_of_posts = this.state.list_of_posts;
+    //Post Object is pushed to app.state.list_of_posts
     updated_list_of_posts.push(addedPost);
     this.setState(
       {list_of_posts:updated_list_of_posts}
@@ -29,12 +43,6 @@ class App extends Component {
       		return <Post key={i} postInfoFromApp={post} />
       }
     );
-    {/*(<div key={i}>
-      {post.author} -
-      {post.caption}<br/>
-      <img src={post.image_url}/><br/>
-      <img src={post.profile_image_url}/><br/>
-    </div>));*/}
     return (
       <div className="App">
       <div className="App-header">
@@ -46,15 +54,6 @@ class App extends Component {
            <p className="App-credits"> a React social network </p>
       </div>
       {posts}
-      {/*
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        */}
       </div>
     );
   }
