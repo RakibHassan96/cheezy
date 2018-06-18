@@ -23,6 +23,7 @@ After a photo is posted, a React component is created that allows users to:
 - Add comments to the post.
 - Like the post.
 - Cheese the post.
+- Overlay photos with filters that can be previewed, applied, and reverted back.
 
 
 ## User Interface
