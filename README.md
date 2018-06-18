@@ -2,6 +2,10 @@
 
 by Matthew Binshtok, Rakib Hassan, Justin Pacquing
 
+## Why?
+
+We decided that there is too much cringeworthy activity on social media among friends, and no platform to express the cringe we experience on a daily basis. Cheezy enables users to interact with friends' posts just as they can on other social networks, but with the added bonus of a cheese button, which users can press to add as much cheese to a post as they want.
+
 ## Running the App
 
 You must have React and its dependencies (Node.js, NDM) installed in order to run this app.
