@@ -34,8 +34,14 @@ After a photo is posted, a React component is created that allows users to:
 
 Here are a few examples of different states of the app during runtime.
 
+App State: feed with one post
+
 ![App With Post State Screenshot](https://github.com/matthewbinshtok/cheezy/blob/master/mainview.png?raw=true)
 
+App State: form for adding a post
+
 ![Add Post App State](https://github.com/matthewbinshtok/cheezy/blob/master/addpost.png?raw=true)
+
+App State: form for adding a comment
 
 ![Add Comment App State](https://github.com/matthewbinshtok/cheezy/blob/master/addcomment.png?raw=true)
